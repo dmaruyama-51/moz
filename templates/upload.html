@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Air &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="freehtml5.co" />
+
+	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">	 -->
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../static/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../static/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="../static/css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="../static/css/style.css">
+	<!-- Swiper -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- 追加 -->
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+	$(function(){
+		$('#img_file').change(function(e){
+			//ファイルオブジェクトを取得する
+			var file = e.target.files[0];
+			var reader = new FileReader();
+		
+			//画像でない場合は処理終了
+			if(file.type.indexOf("image") < 0){
+				alert("upload your file");
+				return false;
+			}
+		
+			//アップロードした画像を設定する
+			reader.onload = (function(file){
+				return function(e){
+					$("#img0").attr("src", e.target.result);
+					$("#img0").attr("title", file.name);
+				};
+			})(file);
+			reader.readAsDataURL(file);
+		
+		});
+	});
+	</script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="/">Moz<span>.</span></a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+							<!-- 
+							<li class="has-dropdown">
+								<a href="blog.html">Blog</a>
+								<ul class="dropdown">
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">eCommerce</a></li>
+									<li><a href="#">Branding</a></li>
+									<li><a href="#">API</a></li>
+								</ul>
+							</li>
+							-->
+							<!-- <li><a href="about.html">About</a></li> -->
+							<li class="active"><a href="upload.html">Upload</a></li>
+							<!-- <li class="btn-cta"><a href="#"><span>Login</span></a></li> -->
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+
+	<div id="fh5co-contact">
+		<!-- 見出し -->
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Let's Convert</h2>
+					<p>upload your wonderful photo and select a favorite pattern.</p>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- フォームエリア -->
+		<div class="container">
+			<div class="row">
+				<form action="/result" method="post" enctype="multipart/form-data">
+					<div class="col-md-4 col-md-push-1 animate-box fh5co-heading">
+						<h3>Upload</h3>
+						<div id="upload-photo">
+							<input type="file" id="img_file" name="img_file"><br>
+							<img id="img0" style="width:300px;height:300px;" >
+						</div>
+					</div>
+					<div class="col-md-8 col-md-push-1 animate-box fh5co-heading">
+						<h3>Fill Pattern</h3>
+						<p>select your favorite pattern.</p>
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="../static/images/style1.jpg" alt="Swiper01" height="250px">
+									&ensp;&ensp;<input type="radio" name="style" value="style1">&ensp;style1
+								</div>
+								<div class="swiper-slide">
+									<img src="../static/images/style2.jpg" alt="Swiper02" height="250px">
+									&ensp;&ensp;<input type="radio" name="style" value="style2">&ensp;style2 
+								</div>
+								<div class="swiper-slide">
+									<img src="../static/images/style3.jpg" alt="Swiper03" height="250px">
+									&ensp;&ensp;<input type="radio" name="style" value="style3">&ensp;style3 
+								</div>
+								<div class="swiper-slide">
+									<img src="../static/images/style4.jpg" alt="Swiper04" height="250px">
+									&ensp;&ensp;<input type="radio" name="style" value="style4">&ensp;style4
+								</div>
+								<div class="swiper-slide">
+									<img src="../static/images/style5.jpg" alt="Swiper05" height="250px">
+									&ensp;&ensp;<input type="radio" name="style" value="style5">&ensp;style5
+								</div>
+								<div class="swiper-slide">
+									<img height="300px">
+								</div>
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-scrollbar"></div>
+						</div>
+					</div>
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<button type="submit" class="btn btn-primary btn-lg btn-learn">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- 
+	<div id="fh5co-started">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Citation</h2>
+					<p style="text-align: left">@misc{OIDv4_ToolKit,<br>
+						&emsp; &emsp; title={Toolkit to download and visualize single or multiple classes from the huge Open Images v4 dataset},<br>
+						&emsp; &emsp; author={Vittorio, Angelo},<br>
+						&emsp; &emsp; year={2018},<br>
+						&emsp; &emsp; publisher={Github},<br>
+						&emsp; &emsp; journal={GitHub repository},<br>
+						&emsp; &emsp; howpublished={\url{https://github.com/EscVM/OIDv4_ToolKit}},<br>
+					  }
+					  </p>
+				</div>
+			</div>
+		</div>
+	</div>
+	-->
+	<!--
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h4>Air</h4>
+					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+				</div>
+				<div class="col-md-2 col-md-push-1 fh5co-widget">
+					<h4>Links</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Portfolio</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-2 col-md-push-1 fh5co-widget">
+					<h4>Categories</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="#">Landing Page</a></li>
+						<li><a href="#">Real Estate</a></li>
+						<li><a href="#">Personal</a></li>
+						<li><a href="#">Business</a></li>
+						<li><a href="#">e-Commerce</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4 col-md-push-1 fh5co-widget">
+					<h4>Contact Information</h4>
+					<ul class="fh5co-footer-links">
+						<li>198 West 21th Street, <br> Suite 721 New York NY 10016</li>
+						<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
+						<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+						<li><a href="http://https://freehtml5.co">freehtml5.co</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+	-->
+
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="../static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../static/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="../static/js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="../static/js/jquery.magnific-popup.min.js"></script>
+	<script src="../static/js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="../static/js/main.js"></script>
+	<!-- Swiper -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>	
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+			centeredSlides: true,
+			slidesPerView: 2,
+			spaceBetween: 50,
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'bullets',
+				clickable: true
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev'
+			},
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				hide: false,
+				draggable: true
+			}
+		});
+	</script>
+	</body>
+</html>
+
